@@ -2,23 +2,61 @@ import "./index.css";
 import { Composition } from "remotion";
 import { HelloWorld, myCompSchema } from "./HelloWorld";
 import { Logo, myCompSchema2 } from "./HelloWorld/Logo";
-
-// Each <Composition> is an entry in the sidebar!
+import { OnlineIcon, DataIcon, AIIcon, PlatformIcon, EcosystemIcon } from "./icons";
 
 export const RemotionRoot: React.FC = () => {
   return (
     <>
+      {/* 招商银行数字化转型五大图标 */}
       <Composition
-        // You can take the "id" to render a video:
-        // npx remotion render HelloWorld
+        id="OnlineIcon"
+        component={OnlineIcon}
+        durationInFrames={180}
+        fps={30}
+        width={800}
+        height={800}
+      />
+      <Composition
+        id="DataIcon"
+        component={DataIcon}
+        durationInFrames={180}
+        fps={30}
+        width={800}
+        height={800}
+      />
+      <Composition
+        id="AIIcon"
+        component={AIIcon}
+        durationInFrames={180}
+        fps={30}
+        width={800}
+        height={800}
+      />
+      <Composition
+        id="PlatformIcon"
+        component={PlatformIcon}
+        durationInFrames={180}
+        fps={30}
+        width={800}
+        height={800}
+      />
+      <Composition
+        id="EcosystemIcon"
+        component={EcosystemIcon}
+        durationInFrames={180}
+        fps={30}
+        width={800}
+        height={800}
+      />
+
+      {/* 原有示例 */}
+      <Composition
         id="HelloWorld"
         component={HelloWorld}
         durationInFrames={150}
         fps={30}
         width={1920}
         height={1080}
-        // You can override these props for each render:
-        // https://www.remotion.dev/docs/parametrized-rendering
         schema={myCompSchema}
         defaultProps={{
           titleText: "Welcome to Remotion",
@@ -27,8 +65,6 @@ export const RemotionRoot: React.FC = () => {
           logoColor2: "#86A8E7",
         }}
       />
-
-      {/* Mount any React component to make it show up in the sidebar and work on it individually! */}
       <Composition
         id="OnlyLogo"
         component={Logo}
